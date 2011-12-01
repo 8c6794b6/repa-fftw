@@ -1,16 +1,16 @@
 Name:                repa-fftw
-Version:             2.1.0
+Version:             2.1.0.0
 Synopsis:            Perform fft with repa via FFTW
 License:             BSD3
 License-file:        LICENSE
-Author:              8c6794b6
-Maintainer:          8c6794b6@gmail.com
-Copyright:           8c6794b6, 2011
+Author:              <8c6794b6@gmail.com>
+Maintainer:          <8c6794b6@gmail.com>
 Category:            Math
 Build-type:          Simple
 Cabal-version:       >=1.2
 
--- Description:
+Description:
+  Performs FFT on repa array data with fftw.
 
 Extra-source-files:
   examples/bench.hs
@@ -53,5 +53,9 @@ Library
     base >= 4.0 && < 4.5,
     carray >= 0.1.5 && < 0.2,
     fft >= 0.1.5 && < 0.2,
-    repa == 2.1.1.5,
+    repa >= 2.1.1.0 && < 2.1.1.6,
     storable-complex >= 0.2
+
+source-repository head
+  type: git
+  location: https://github.com/8c6794b6/repa-fftw.git
