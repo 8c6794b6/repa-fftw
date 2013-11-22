@@ -19,12 +19,12 @@ module Data.Array.Repa.FFTW
   ( -- * Examples
     -- $examples
 
+    -- * References
+    -- $references
+
     -- * FFT functions (1 dimension)
     fft
   , ifft
-
-    -- * References
-    -- $references
 
   ) where
 
@@ -41,7 +41,7 @@ import Foreign.Storable.Complex ()
 import qualified Data.Array.CArray as C
 import qualified Data.Array.Repa as R
 import qualified Data.Array.Repa.Repr.ForeignPtr as RF
-import qualified Math.FFT as F
+import qualified Math.FFT as FFT
 
 {-$examples
 
@@ -84,12 +84,12 @@ Loading above in ghci:
 
 -- | Performs 1 dimension forward fft.
 fft :: Array F DIM1 (Complex Double) -> Array F DIM1 (Complex Double)
-fft = c2r . F.dft . r2c
+fft = c2r . FFT.dft . r2c
 {-# INLINE fft #-}
 
 -- | Performs 1 dimension inverse fft.
 ifft :: Array F DIM1 (Complex Double) -> Array F DIM1 (Complex Double)
-ifft = c2r . F.idft . r2c
+ifft = c2r . FFT.idft . r2c
 {-# INLINE ifft #-}
 
 -- --------------------------------------------------------------------------
@@ -104,7 +104,7 @@ r2c rarr = unsafePerformIO $ do
 
 c2r :: CArray Int (Complex Double) -> Array F DIM1 (Complex Double)
 c2r carr = case C.toForeignPtr carr of
-  (n,fptr) -> let sh = Z:.n in
+  (n, fptr) -> let sh = Z:.n in
     R.computeS $ R.fromFunction sh $ \ix ->
     unsafePerformIO $ withForeignPtr fptr $ \ptr ->
     peekElemOff ptr $ R.toIndex sh ix
