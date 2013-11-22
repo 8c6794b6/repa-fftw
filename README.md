@@ -1,7 +1,7 @@
 repa-fftw
 =========
 
-Performs dft with on repa array data with fftw.
+Performs dft on repa array data with fftw.
 
 For more info about repa and fftw, see:
 
