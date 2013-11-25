@@ -45,12 +45,11 @@ test-suite test
     -Wall
   build-depends:
     base >= 4.6 && < 5,
-    QuickCheck >= 2.6,
     repa >= 3.2.3,
+    repa-fftw -any,
     tasty >= 0.4.0,
     tasty-hunit >= 0.4.1,
-    tasty-quickcheck >= 0.3.1,
-    repa-fftw -any
+    tasty-quickcheck >= 0.3.1
 
 benchmark bench
   type:
