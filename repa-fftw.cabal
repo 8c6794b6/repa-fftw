@@ -24,7 +24,8 @@ source-repository head
 
 Library
   ghc-options:
-    -Wall -O2 -fno-warn-orphans
+    -Wall -fno-warn-orphans
+    -O3 -fllvm -optl-O3
   exposed-modules:
     Data.Array.Repa.FFTW
   build-depends:
@@ -60,7 +61,7 @@ benchmark bench
     bench.hs
   ghc-options:
     -Wall -fno-warn-orphans
-    -O2 -threaded -rtsopts
+    -threaded -rtsopts
   build-depends:
     base >= 4.6 && < 5,
     criterion >= 0.8,
