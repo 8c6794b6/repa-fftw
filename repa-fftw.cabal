@@ -12,12 +12,6 @@ Cabal-version:       >=1.8
 Description:
   Performs FFT on repa array data with fftw.
 
-flag dev
-  description:
-    Activate developer flags
-  default:
-    False
-
 source-repository head
   type: git
   location: https://github.com/8c6794b6/repa-fftw.git
