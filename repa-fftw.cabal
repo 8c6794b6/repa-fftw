@@ -1,5 +1,5 @@
 Name:                repa-fftw
-Version:             3.2.3.1
+Version:             3.2.3.2
 Synopsis:            Perform fft with repa via FFTW
 License:             BSD3
 License-file:        LICENSE
@@ -24,14 +24,13 @@ source-repository head
 
 Library
   ghc-options:
-    -Wall -fno-warn-orphans
-    -O3 -fllvm -optl-O3
+    -Wall -fno-warn-orphans -O3
   exposed-modules:
     Data.Array.Repa.FFTW
   build-depends:
     base >= 4.6 && < 5,
-    carray >= 0.1.5 && < 0.2,
-    fft >= 0.1.5 && < 0.2,
+    carray >= 0.1.5,
+    fft >= 0.1.5,
     repa >= 3.2.3,
     storable-complex >= 0.2
 
