@@ -5,7 +5,7 @@ License:             BSD3
 License-file:        LICENSE
 Author:              <8c6794b6@gmail.com>
 Maintainer:          <8c6794b6@gmail.com>
-Category:            Math
+Category:            Data Structures
 Build-type:          Simple
 Cabal-version:       >=1.8
 
